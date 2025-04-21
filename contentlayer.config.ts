@@ -106,7 +106,7 @@ const rehypeoptions = {
 
 export default makeSource({
   contentDirPath: ".",
-  documentTypes: [Categoria, Producto, Post],
+  documentTypes: [Categoria, Producto],
   mdx: {
     // rehypePlugins: [[rehypePrettyCode, rehypeoptions]],
   },

@@ -4,15 +4,34 @@ import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import { Autoplay } from 'swiper/modules'
+import { motion } from 'framer-motion'
 
 export default function Hero() {
   return (
-    <section id="inicio" className="text-center py-20 bg-gray-50 dark:bg-neutral-900">
-      <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">Estilo y Comodidad para Ti</h2>
-      <p className="text-gray-600 dark:text-gray-300 mb-8">
+    <motion.section
+      id="inicio"
+      className="text-center py-20 bg-gray-50 dark:bg-[#111111]"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+    >
+      <motion.h2
+        className="text-4xl font-extrabold text-gray-800 dark:text-white mb-4"
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.2 }}
+      >
+        Estilo y Comodidad para Ti
+      </motion.h2>
+      <motion.p
+        className="text-gray-600 dark:text-gray-300 mb-8"
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.4 }}
+      >
         Descubre nuestra colección exclusiva de ropa para cada ocasión.
-      </p>
-      <div className="w-full max-w-3xl overflow-hidden rounded-lg shadow-md mx-auto">
+      </motion.p>
+      <div className="w-full max-w-4xl overflow-hidden rounded-lg shadow-md mx-auto">
         <Swiper spaceBetween={10} slidesPerView={1} loop autoplay={{
           delay: 3000, // cada 3 segundos
           disableOnInteraction: false, // sigue aunque el usuario interactúe
@@ -29,6 +48,6 @@ export default function Hero() {
           </SwiperSlide>
         </Swiper>
       </div>
-    </section>
+    </motion.section>
   )
 }

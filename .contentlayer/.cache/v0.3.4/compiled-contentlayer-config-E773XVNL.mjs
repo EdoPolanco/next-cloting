@@ -81,7 +81,7 @@ var Producto = defineDocumentType(() => ({
 }));
 var contentlayer_config_default = makeSource({
   contentDirPath: ".",
-  documentTypes: [Categoria, Producto, Post],
+  documentTypes: [Categoria, Producto],
   mdx: {
     // rehypePlugins: [[rehypePrettyCode, rehypeoptions]],
   }
@@ -92,4 +92,4 @@ export {
   Producto,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-YZZVPASI.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-E773XVNL.mjs.map

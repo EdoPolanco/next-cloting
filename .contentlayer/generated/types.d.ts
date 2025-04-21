@@ -23,22 +23,6 @@ export type Categoria = {
   url: string
 }
 
-export type Post = {
-  /** File path relative to `contentDirPath` */
-  _id: string
-  _raw: Local.RawDocumentData
-  type: 'Post'
-  /** The title of the post */
-  title: string
-  /** The description of the post */
-  description: string
-  /** The date of the post */
-  date: IsoDateTimeString
-  /** MDX file body */
-  body: MDX
-  url: string
-}
-
 export type Producto = {
   /** File path relative to `contentDirPath` */
   _id: string
@@ -62,8 +46,8 @@ export type Producto = {
 export type AllTypes = DocumentTypes | NestedTypes
 export type AllTypeNames = DocumentTypeNames | NestedTypeNames
 
-export type DocumentTypes = Categoria | Post | Producto
-export type DocumentTypeNames = 'Categoria' | 'Post' | 'Producto'
+export type DocumentTypes = Categoria | Producto
+export type DocumentTypeNames = 'Categoria' | 'Producto'
 
 export type NestedTypes = never
 export type NestedTypeNames = never
@@ -72,7 +56,6 @@ export type DataExports = {
   allDocuments: DocumentTypes[]
   allCategoria: Categoria[]
   allProductos: Producto[]
-  allPosts: Post[]
 }
 
 
@@ -93,7 +76,6 @@ declare global {
 
 export type DocumentTypeMap = {
   Categoria: Categoria
-  Post: Post
   Producto: Producto
 }
 
